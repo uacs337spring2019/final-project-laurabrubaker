@@ -1,0 +1,23 @@
+{
+  "name": "final-project-laurabrubaker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "coastercats.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uacs337spring2019/final-project-laurabrubaker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uacs337spring2019/final-project-laurabrubaker/issues"
+  },
+  "homepage": "https://github.com/uacs337spring2019/final-project-laurabrubaker#readme"
+}
