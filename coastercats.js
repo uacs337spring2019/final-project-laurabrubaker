@@ -9,6 +9,7 @@ window.onload = function() {
   document.getElementById("secemail").addEventListener("click", Copy);
   document.getElementById("error").style.display = "none";
   document.getElementById("already").style.display = "none";
+  document.getElementById("added").style.display = "none";
 };
 
 /**
@@ -37,38 +38,53 @@ and displays a message if they're already subscribed
 @method
 */
 function Sub(){
+  document.getElementById("error").style.display = "none";
+  document.getElementById("already").style.display = "none";
+  document.getElementById("added").style.display = "none";
   let fname = document.getElementById("fname").value;
   let lname = document.getElementById("lname").value;
   let email = document.getElementById("email").value;
   console.log(fname);
   console.log(lname);
   console.log(email);
-
-  if (Check(fname, lname, email) == 1){
-    Add(fname, lname, email);
-  }
-  else if (Check(fname, lname, email) == 2){
-
-  }
-  else{
-
-  }
+  Request(fname, lname, email, false);
 }
 
 /**
 this function does a get request to the database to see if the user is already subscribed
+this adds them if they haven't already been added
 @method
 */
-function Check(fname, lname, email){
-
+function Request(fname, lname, email, flag){
+  var url = "http://localhost:3000/?fname=" + fname + "&lname=" + lname + "&email=" + email + "&flag=" + flag;
+  fetch(url)
+  .then(checkStatus)
+  .then(function(responseText) {
+    console.log(responseText);
+    if(responseText == "1"){
+      console.log("wasn't already in file");
+      Request(fname, lname, email, true);
+      document.getElementById("added").style.display = "block";
+    }
+    else{
+      document.getElementById("already").style.display = "block";
+    }
+  })
+  .catch(function(error) {
+    document.getElementById("error").style.display = "block";
+  });
 }
 
-/**
-this function adds the user to the email list
-@method
-*/
-function Add(fname, lname, email){
-
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+    //console.log(response.text());
+    return response.text();
+    // special reject message for page not found
+  } else if(response.status == 404) {
+    return Promise.reject(new Error("sorry we do not have any data"));
+  } else {
+    return Promise.reject(new Error(response.status+": "+response.statusText));
+  }
 }
 
 })();
