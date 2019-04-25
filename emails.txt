@@ -5,3 +5,6 @@ test4@email.edu,testf,testl
 test5@email.edu,testf,testl
 test@gmail.com,est,sdfsdf
 tes4t@gmail.com,est,sdfsdf
+g@g.com,d,f
+3g@g.com,,
+sdf@.,f,f

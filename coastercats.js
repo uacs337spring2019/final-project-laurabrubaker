@@ -7,10 +7,19 @@ window.onload = function() {
   document.getElementById("vpemail").addEventListener("click", Copy);
   document.getElementById("treasuremail").addEventListener("click", Copy);
   document.getElementById("secemail").addEventListener("click", Copy);
+  Clear();
+};
+
+/**
+this function clears the divs with messages
+@method
+*/
+function Clear(){
   document.getElementById("error").style.display = "none";
   document.getElementById("already").style.display = "none";
   document.getElementById("added").style.display = "none";
-};
+  document.getElementById("invalid").style.display = "none";
+}
 
 /**
 this function copies the email of whichever officer email was clicked
@@ -38,12 +47,14 @@ and displays a message if they're already subscribed
 @method
 */
 function Sub(){
-  document.getElementById("error").style.display = "none";
-  document.getElementById("already").style.display = "none";
-  document.getElementById("added").style.display = "none";
+  Clear();
   let fname = document.getElementById("fname").value;
   let lname = document.getElementById("lname").value;
   let email = document.getElementById("email").value;
+  if(email.indexOf("@") == -1 || email.indexOf(".") == -1 || fname.length == 0 || lname.length == 0){
+    document.getElementById("invalid").style.display = "block";
+    return;
+  }
   console.log(fname);
   console.log(lname);
   console.log(email);
@@ -71,6 +82,7 @@ function Request(fname, lname, email, flag){
     }
   })
   .catch(function(error) {
+    Clear();
     document.getElementById("error").style.display = "block";
   });
 }
