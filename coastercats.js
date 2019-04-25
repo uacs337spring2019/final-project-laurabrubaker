@@ -9,8 +9,12 @@ window.onload = function() {
   document.getElementById("secemail").addEventListener("click", Copy);
   document.getElementById("error").style.display = "none";
   document.getElementById("already").style.display = "none";
-}
+};
 
+/**
+this function copies the email of whichever officer email was clicked
+@method
+*/
 function Copy(evt){
   let path = evt.target.id;
   console.log(path);
@@ -27,6 +31,11 @@ function Copy(evt){
   alert("Copied the email: " + email[0]);
 }
 
+/**
+this function adds the user to the email list if they aren't already
+and displays a message if they're already subscribed
+@method
+*/
 function Sub(){
   let fname = document.getElementById("fname").value;
   let lname = document.getElementById("lname").value;
@@ -46,10 +55,18 @@ function Sub(){
   }
 }
 
+/**
+this function does a get request to the database to see if the user is already subscribed
+@method
+*/
 function Check(fname, lname, email){
 
 }
 
+/**
+this function adds the user to the email list
+@method
+*/
 function Add(fname, lname, email){
 
 }

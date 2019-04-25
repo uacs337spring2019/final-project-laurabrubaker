@@ -1,0 +1,8 @@
+{
+  "name": "Coaster Cats",
+  "description": "A website for the Coaster Cats club",
+  "repository": "https://github.com/uacs337spring2019/final-project-laurabrubaker",
+  "logo": "https://rawgit.com/heroku/node-js-sample/master/public/node.svg"
+  ,
+  "keywords":["node","express","static"]
+}
