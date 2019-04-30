@@ -67,7 +67,8 @@ this adds them if they haven't already been added
 @method
 */
 function Request(fname, lname, email, flag){
-  var url = "http://localhost:3000/?fname=" + fname + "&lname=" + lname + "&email=" + email + "&flag=" + flag;
+  var url = "http://localhost:process.env.PORT
+/?fname=" + fname + "&lname=" + lname + "&email=" + email + "&flag=" + flag;
   fetch(url)
   .then(checkStatus)
   .then(function(responseText) {
