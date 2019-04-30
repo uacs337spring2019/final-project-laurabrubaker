@@ -2,14 +2,14 @@
   "name": "final-project-laurabrubaker",
   "version": "1.0.0",
   "description": "",
-  "main": "coastercats_service.js",
+  "main": "coastercats.html",
   "dependencies": {
     "express": "^4.16.4"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node coastercats.html"
+    "start": "node coastercats_service.js"
   },
   "repository": {
     "type": "git",
