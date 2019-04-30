@@ -2,8 +2,12 @@
   "name": "final-project-laurabrubaker",
   "version": "1.0.0",
   "description": "",
-  "main": "coastercats_service.js",
+  "engines":{
+    "node": "6.11.1"
+  },
+  "main": "coastercat.html",
   "dependencies": {
+    "fs": "^0.0.1-security",
     "express": "^4.16.4"
   },
   "devDependencies": {},
