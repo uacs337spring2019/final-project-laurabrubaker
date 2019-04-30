@@ -2,7 +2,7 @@
   "name": "final-project-laurabrubaker",
   "version": "1.0.0",
   "description": "",
-  "main": "coastercats_service.js",
+  "main": "coastercats.js",
   "dependencies": {
     "express": "^4.16.4"
   },

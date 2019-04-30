@@ -52,6 +52,7 @@ app.get('/', function (req, res) {
     var stream = fs.createWriteStream("emails.txt", {flags:'a', 'encoding': null, 'mode': 0666});
     stream.write(string + "\n");
     stream.end();
+    res.send(string);
   }
 })
 
