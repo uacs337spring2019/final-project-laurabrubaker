@@ -68,7 +68,7 @@ this adds them if they haven't already been added
 @method
 */
 function Request(fname, lname, email, flag){
-  var url = "https://coastercats.herokuapp.com:process.env.PORT
+  var url = "https://coastercats.herokuapp.com
 /?fname=" + fname + "&lname=" + lname + "&email=" + email + "&flag=" + flag;
   fetch(url)
   .then(checkStatus)
