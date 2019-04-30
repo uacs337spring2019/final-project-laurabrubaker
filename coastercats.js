@@ -2,6 +2,7 @@
 (function () {
 
 window.onload = function() {
+  console.log("start");
   document.getElementById("subscribe").addEventListener("click", Sub);
   document.getElementById("prezemail").addEventListener("click", Copy);
   document.getElementById("vpemail").addEventListener("click", Copy);
